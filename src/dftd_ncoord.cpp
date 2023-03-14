@@ -310,7 +310,7 @@ int get_ncoord_erf(
   if (info != EXIT_SUCCESS) return info;
 
   return EXIT_SUCCESS;
-};
+}
 
 int ncoord_erf(
   const TMolecule &mol,

@@ -399,7 +399,7 @@ dfunc get_dfunc(std::string name) {
   auto iter = dfuncs.find(func);
   if (iter != dfuncs.end()) { return iter->second; }
   return none;
-};
+}
 
 dparam get_d4eeqbjatm_2019_parameter(dfunc num) {
   dparam par;

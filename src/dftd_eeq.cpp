@@ -177,7 +177,7 @@ int get_charges(
   cn.DelVec();
 
   return EXIT_SUCCESS;
-};
+}
 
 int get_vrhs(
   const TMolecule &mol,
@@ -218,7 +218,7 @@ int get_vrhs(
   Xvec(nat) = charge;
 
   return EXIT_SUCCESS;
-};
+}
 
 int get_amat_0d(
   const TMolecule &mol,
@@ -259,7 +259,7 @@ int get_amat_0d(
   Amat(mm, mm) = 0.0;
 
   return EXIT_SUCCESS;
-};
+}
 
 int get_damat_0d(
   const TMolecule &mol,
@@ -316,7 +316,7 @@ int get_damat_0d(
   }
 
   return EXIT_SUCCESS;
-};
+}
 
 int eeq_chrgeq(
   const TMolecule &mol,

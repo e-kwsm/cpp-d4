@@ -61,7 +61,7 @@ bool check(
 
   if (diff > epsilon) { return EXIT_FAILURE; }
   return EXIT_SUCCESS;
-};
+}
 
 bool check(
   float actual,
@@ -79,7 +79,7 @@ bool check(
 
   if (diff > epsilon) { return EXIT_FAILURE; }
   return EXIT_SUCCESS;
-};
+}
 
 void print_fail(const char specifier[32], double obtained, double expected) {
   printf("Failed for: '%s'\n", specifier);

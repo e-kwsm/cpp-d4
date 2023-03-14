@@ -52,7 +52,7 @@ test get_tests(std::string name) {
   auto iter = testStrings.find(test);
   if (iter != testStrings.end()) { return iter->second; }
   return invalid;
-};
+}
 
 int main(int argc, char *argv[]) {
   switch (get_tests(argv[1])) {

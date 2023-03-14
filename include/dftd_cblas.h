@@ -74,11 +74,11 @@ inline int BLAS_Add_Mat_x_Vec(
         1
       );
       return EXIT_SUCCESS;
-    };
-  };
+    }
+  }
 
   return EXIT_FAILURE;
-};
+}
 
 /**
  * @brief General matrix-matrix multiplication (`C = alpha * A * B + C`).
@@ -110,7 +110,7 @@ inline int BLAS_Add_Mat_x_Mat(
       // check dimensions
       if (A.cols != B.rows || A.rows != C.rows || B.cols != C.cols) {
         exit(EXIT_FAILURE);
-      };
+      }
       cblas_dgemm(
         CblasRowMajor,
         CblasNoTrans,
@@ -132,7 +132,7 @@ inline int BLAS_Add_Mat_x_Mat(
       // check dimensions for C=A*BT
       if (A.cols != B.cols || A.rows != C.rows || B.rows != C.cols) {
         exit(EXIT_FAILURE);
-      };
+      }
       // B is transposed, A not
       cblas_dgemm(
         CblasRowMajor,
@@ -150,14 +150,14 @@ inline int BLAS_Add_Mat_x_Mat(
         C.p,
         C.cols
       );
-    }; // B transposed
+    } // B transposed
   } // A not transposed
   else {
     if (!TransposeB) {
       // check dimensions for C=AT*B
       if (A.rows != B.rows || A.cols != C.rows || B.cols != C.cols) {
         exit(EXIT_FAILURE);
-      };
+      }
       // A is transposed and B not
       cblas_dgemm(
         CblasRowMajor,
@@ -180,7 +180,7 @@ inline int BLAS_Add_Mat_x_Mat(
       // check dimensions for C=AT*BT
       if (A.rows != B.cols || A.cols != C.rows || B.rows != C.cols) {
         exit(EXIT_FAILURE);
-      };
+      }
       // both are transposed
       cblas_dgemm(
         CblasRowMajor,
@@ -198,10 +198,10 @@ inline int BLAS_Add_Mat_x_Mat(
         C.p,
         C.cols
       );
-    }; // B transposed
-  };
+    } // B transposed
+  }
   return EXIT_SUCCESS;
-};
+}
 
 /**
  * @brief Compute inverse of a matrix using LU decomposition.
@@ -235,6 +235,6 @@ inline int BLAS_InvertMatrix(TMatrix<double> &a) {
   delete[] ipiv;
 
   return EXIT_SUCCESS;
-};
+}
 
 } // namespace dftd4

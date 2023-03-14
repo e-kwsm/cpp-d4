@@ -135,7 +135,7 @@ int test_pbed4_mb01() {
   if (info != EXIT_SUCCESS) return info;
 
   return test_numgrad(mol, charge, par);
-};
+}
 
 int test_bp86d4atm_water() {
   // PBE-D4(EEQ)-ATM parameters
@@ -178,4 +178,4 @@ int test_grad() {
   if (info != EXIT_SUCCESS) return info;
 
   return EXIT_SUCCESS;
-};
+}

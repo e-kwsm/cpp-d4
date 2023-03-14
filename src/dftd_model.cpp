@@ -68,7 +68,7 @@ TD4Model::TD4Model(
   ga = ga_scale;
   gc = gc_scale;
   wf = wf_scale;
-};
+}
 
 int TD4Model::weight_references(
   const TMolecule &mol,
