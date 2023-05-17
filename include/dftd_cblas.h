@@ -212,11 +212,10 @@ inline int BLAS_Add_Mat_x_Mat(
 inline int BLAS_InvertMatrix(TMatrix<double> &a) {
   if (a.rows != a.cols) { return EXIT_FAILURE; }
 
-  lapack_int info;
   lapack_int *ipiv = new lapack_int[a.rows];
 
   // LU factorization of a general m-by-n matrix
-  info = LAPACKE_dgetrf(
+  lapack_int info = LAPACKE_dgetrf(
     LAPACK_ROW_MAJOR,
     (lapack_int)a.rows,
     (lapack_int)a.cols,
