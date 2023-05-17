@@ -1531,7 +1531,7 @@ dparam get_d4eeqbjmbd_2019_parameter(dfunc num) {
 }
 
 int d4par(
-  const std::string func,
+  const std::string& func,
   dftd4::dparam &par,
   const bool latm /* = true*/
 ) {
