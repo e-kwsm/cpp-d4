@@ -102,6 +102,8 @@ void help() {
 
    -f, --func <name>[/<basis>]
            calculate DFT-D4 dispersion for the given functional
+   -g, --grad
+           calculate gradient
    -v, --verbose
            be verbose
    -h, --help
