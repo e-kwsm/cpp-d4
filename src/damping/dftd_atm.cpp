@@ -140,9 +140,9 @@ int get_atm_dispersion_energy(
         c6jk = c6(jj, kk);
         c9ijk = s9 * sqrt(fabs(c6ij * c6ik * c6jk));
 
-        rijk = rij * rik * rjk;
-        r2ijk = r2ij * r2ik * r2jk;
-        r3ijk = rijk * r2ijk;
+        double rijk = rij * rik * rjk;
+        double r2ijk = r2ij * r2ik * r2jk;
+        double r3ijk = rijk * r2ijk;
 
         fdmp = 1.0 / (1.0 + 6.0 * pow(r0ijk / rijk, alp / 3.0));
         ang = ((0.375 * (r2ij + r2jk - r2ik) * (r2ij + r2ik - r2jk) *
@@ -221,10 +221,10 @@ int get_atm_dispersion_derivs(
         rjk = dist(jj, kk);
         if (rjk > cutoff) continue;
 
-        triple = triple_scale(iat, jat, kat);
+        double triple = triple_scale(iat, jat, kat);
 
-        r2ik = pow(rik, 2);
-        r2jk = pow(rjk, 2);
+        double r2ik = pow(rik, 2);
+        double r2jk = pow(rjk, 2);
 
         kzp = mol.ATNO(kat);
         r0ik = a1 * sqrt(3.0 * r4r2[izp] * r4r2[kzp]) + a2;

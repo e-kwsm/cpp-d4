@@ -106,13 +106,13 @@ int get_dispersion2_energy(
       r0ij = par.a1 * sqrt(r4r2ij) + par.a2;
       c6ij = c6(ii, jj);
 
-      t6 = fdmpr_bj(6, r, r0ij);
-      t8 = fdmpr_bj(8, r, r0ij);
+      double t6 = fdmpr_bj(6, r, r0ij);
+      double t8 = fdmpr_bj(8, r, r0ij);
 
-      edisp = par.s6 * t6 + par.s8 * r4r2ij * t8;
+      double edisp = par.s6 * t6 + par.s8 * r4r2ij * t8;
 
       if (par.s10 != 0.0) {
-        t10 = fdmpr_bj(10, r, r0ij);
+        double t10 = fdmpr_bj(10, r, r0ij);
         edisp += par.s10 * 49.0 / 40.0 * pow(r4r2ij, 2) * t10;
       }
 
@@ -164,18 +164,18 @@ int get_dispersion2_derivs(
       r0ij = par.a1 * sqrt(r4r2ij) + par.a2;
       c6ij = c6(ii, jj);
 
-      t6 = fdmpr_bj(6, r, r0ij);
-      t8 = fdmpr_bj(8, r, r0ij);
+      double t6 = fdmpr_bj(6, r, r0ij);
+      double t8 = fdmpr_bj(8, r, r0ij);
 
-      dt6 = -6 * pow(r, 5) * pow(t6, 2);
-      dt8 = -8 * pow(r, 7) * pow(t8, 2);
+      double dt6 = -6 * pow(r, 5) * pow(t6, 2);
+      double dt8 = -8 * pow(r, 7) * pow(t8, 2);
 
-      edisp = par.s6 * t6 + par.s8 * r4r2ij * t8;
-      gdisp = par.s6 * dt6 + par.s8 * r4r2ij * dt8;
+      double edisp = par.s6 * t6 + par.s8 * r4r2ij * t8;
+      double gdisp = par.s6 * dt6 + par.s8 * r4r2ij * dt8;
 
       if (par.s10 != 0.0) {
-        t10 = fdmpr_bj(10, r, r0ij);
-        dt10 = -10 * pow(r, 9) * pow(t10, 2);
+        double t10 = fdmpr_bj(10, r, r0ij);
+        double dt10 = -10 * pow(r, 9) * pow(t10, 2);
         edisp += par.s10 * 49.0 / 40.0 * pow(r4r2ij, 2) * t10;
         gdisp += par.s10 * 49.0 / 40.0 * pow(r4r2ij, 2) * dt10;
       }
